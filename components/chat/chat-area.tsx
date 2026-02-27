@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useMemo } from "react"
 import { useQuery, useMutation } from "convex/react"
 import { api } from "@/convex/_generated/api"
 import { Id } from "@/convex/_generated/dataModel"
@@ -44,7 +44,7 @@ export function ChatArea({ conversationId, currentUserId }: ChatAreaProps) {
     currentUserId
   })
   const messagesData = useQuery(api.messages.getMessages, { conversationId, userId: currentUserId })
-  const messages = messagesData?.messages || []
+  const messages = useMemo(() => messagesData?.messages || [], [messagesData?.messages])
   const hasMore = messagesData?.hasMore || false
   const nextCursor = messagesData?.nextCursor
   const typingUsers = useQuery(api.typing.getTypingUsers, {
@@ -77,16 +77,6 @@ export function ChatArea({ conversationId, currentUserId }: ChatAreaProps) {
 
   const { scrollRef, showScrollButton, scrollToBottom } = useAutoScroll(`${messages?.length || 0}-${typingUsers?.length || 0}`)
   const router = useRouter()
-
-  // Mark as read when messages load
-  useEffect(() => {
-    if (messages && messages.length > 0) {
-      const timeout = setTimeout(() => {
-        markAsRead({ conversationId, userId: currentUserId })
-      }, 100) // Debounce for performance
-      return () => clearTimeout(timeout)
-    }
-  }, [messages, conversationId, currentUserId, markAsRead])
 
   // Mark as read when messages load
   useEffect(() => {
