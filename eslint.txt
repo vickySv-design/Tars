@@ -1,0 +1,19 @@
+﻿
+C:\Users\vicky\Desktop\Tars\components\chat\chat-area.tsx
+  88:6  warning  React Hook useEffect has a missing dependency: 'messages'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\vicky\Desktop\Tars\components\chat\message-bubble.tsx
+  37:41  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render     react-hooks/rules-of-hooks
+  38:45  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render     react-hooks/rules-of-hooks
+  39:47  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render     react-hooks/rules-of-hooks
+  40:39  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render     react-hooks/rules-of-hooks
+  41:22  error  React Hook "useRef" is called conditionally. React Hooks must be called in the exact same order in every component render       react-hooks/rules-of-hooks
+  42:21  error  React Hook "useRef" is called conditionally. React Hooks must be called in the exact same order in every component render       react-hooks/rules-of-hooks
+  43:23  error  React Hook "useMutation" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  44:25  error  React Hook "useMutation" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  45:26  error  React Hook "useMutation" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  48:3   error  React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render    react-hooks/rules-of-hooks
+  91:3   error  React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render    react-hooks/rules-of-hooks
+
+Γ£û 12 problems (11 errors, 1 warning)
+
